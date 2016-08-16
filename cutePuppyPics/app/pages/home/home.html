@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>หน้าหลัก</ion-title>
+  </ion-navbar>
+
+
+
+
+
+</ion-header>
+
+<ion-content padding class="home" >
+
+   <ion-list>
+        <ion-item *ngFor="let item of items">
+          <ion-label>
+               {{item.title}}
+          </ion-label>
+             <ion-icon name='{{item.icon}}'  item-left ></ion-icon>
+             <ion-note item-right>
+                  {{item.description}}
+             </ion-note>
+        </ion-item>
+   </ion-list>
+
+</ion-content>
