@@ -65,7 +65,7 @@ class ModalsContentPage {
       {
         name: 'Gollum',
         quote: 'Sneaky little hobbitses!',
-        image: 'img/avatar-gollum.jpg',
+      //  image: 'img/avatar-gollum.jpg',
         items: [
           { title: 'Race', note: 'Hobbit' },
           { title: 'Culture', note: 'River Folk' },
@@ -75,7 +75,7 @@ class ModalsContentPage {
       {
         name: 'Frodo',
         quote: 'Go back, Sam! I\'m going to Mordor alone!',
-        image: 'img/avatar-frodo.jpg',
+      //  image: 'img/avatar-frodo.jpg',
         items: [
           { title: 'Race', note: 'Hobbit' },
           { title: 'Culture', note: 'Shire Folk' },
@@ -85,7 +85,27 @@ class ModalsContentPage {
       {
         name: 'Samwise Gamgee',
         quote: 'What we need is a few good taters.',
-        image: 'img/avatar-samwise.jpg',
+      //  image: 'img/avatar-samwise.jpg',
+        items: [
+          { title: 'Race', note: 'Hobbit' },
+          { title: 'Culture', note: 'Shire Folk' },
+          { title: 'Nickname', note: 'Sam' }
+        ]
+      },
+      {
+        name: 'Samwise Gamgee',
+        quote: 'What we need is a few good taters.',
+      //  image: 'img/avatar-samwise.jpg',
+        items: [
+          { title: 'Race', note: 'Hobbit' },
+          { title: 'Culture', note: 'Shire Folk' },
+          { title: 'Nickname', note: 'Sam' }
+        ]
+      },
+      {
+        name: 'Samwise Gamgee',
+        quote: 'What we need is a few good taters.',
+      //  image: 'img/avatar-samwise.jpg',
         items: [
           { title: 'Race', note: 'Hobbit' },
           { title: 'Culture', note: 'Shire Folk' },
