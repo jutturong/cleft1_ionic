@@ -2,7 +2,9 @@ import {Component} from '@angular/core';
 import {NavController, NavParams } from 'ionic-angular';
 import { ModalController , ViewController , Platform } from 'ionic-angular';
 
-import { AlertController }  from 'ionic-angular';
+import { AlertController , LoadingController }  from 'ionic-angular';
+
+
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
@@ -13,7 +15,7 @@ export class HomePage {
    public items:any;
  public viewCtrl: ViewController
 
-  constructor(private nav: NavController,private alertController:AlertController,public modalController:ModalController) {
+  constructor(private nav: NavController,private alertController:AlertController,public modalController:ModalController , private loadingController: LoadingController) {
        //this.selectedItem = navParams.get('item');
       this.items=[
         { title:'ภาวะปากแหว่งเพานโหว่',description:'',icon:'ios-arrow-dropright',num:0},
@@ -46,6 +48,17 @@ export class HomePage {
      }
 
 
+     presentLoading() {
+        let loader = this.loadingController.create({
+          content: "Please wait...",
+          duration: 3000
+        });
+        loader.present();
+      }
+
+
+
+
 }
 
 
@@ -65,7 +78,7 @@ class ModalsContentPage {
       {
         name: 'Gollum',
         quote: 'Sneaky little hobbitses!',
-      //  image: 'img/avatar-gollum.jpg',
+        image: 'image/avatar-frodo.jpg',
         items: [
           { title: 'Race', note: 'Hobbit' },
           { title: 'Culture', note: 'River Folk' },
@@ -75,7 +88,7 @@ class ModalsContentPage {
       {
         name: 'Frodo',
         quote: 'Go back, Sam! I\'m going to Mordor alone!',
-      //  image: 'img/avatar-frodo.jpg',
+        image: 'image/avatar-frodo.jpg',
         items: [
           { title: 'Race', note: 'Hobbit' },
           { title: 'Culture', note: 'Shire Folk' },
@@ -85,7 +98,7 @@ class ModalsContentPage {
       {
         name: 'Samwise Gamgee',
         quote: 'What we need is a few good taters.',
-      //  image: 'img/avatar-samwise.jpg',
+       image: 'image/avatar-samwise.jpg',
         items: [
           { title: 'Race', note: 'Hobbit' },
           { title: 'Culture', note: 'Shire Folk' },
@@ -95,7 +108,7 @@ class ModalsContentPage {
       {
         name: 'Samwise Gamgee',
         quote: 'What we need is a few good taters.',
-      //  image: 'img/avatar-samwise.jpg',
+        image: 'image/avatar-samwise.jpg',
         items: [
           { title: 'Race', note: 'Hobbit' },
           { title: 'Culture', note: 'Shire Folk' },
@@ -105,7 +118,7 @@ class ModalsContentPage {
       {
         name: 'Samwise Gamgee',
         quote: 'What we need is a few good taters.',
-      //  image: 'img/avatar-samwise.jpg',
+        image: 'image/avatar-samwise.jpg',
         items: [
           { title: 'Race', note: 'Hobbit' },
           { title: 'Culture', note: 'Shire Folk' },
