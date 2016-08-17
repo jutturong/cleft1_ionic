@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>หน้าหลัก</ion-title>
+    <ion-title>  <ion-icon name="md-home"></ion-icon>  Home </ion-title>
   </ion-navbar>
 
 
@@ -13,8 +13,8 @@
 <ion-content padding class="home" >
 
    <ion-list>
-        <ion-item *ngFor="let item of items">
-          <ion-label>
+        <ion-item *ngFor="let item of items" (click)="openModal({charNum: 0 })">
+          <ion-label >
                {{item.title}}
           </ion-label>
              <ion-icon name='{{item.icon}}'  item-left ></ion-icon>
