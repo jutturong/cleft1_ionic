@@ -1,10 +1,7 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams } from 'ionic-angular';
+import {NavController, NavParams  } from 'ionic-angular';
 import { ModalController , ViewController , Platform } from 'ionic-angular';
-
 import { AlertController , LoadingController }  from 'ionic-angular';
-
-
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
@@ -18,11 +15,11 @@ export class HomePage {
   constructor(private nav: NavController,private alertController:AlertController,public modalController:ModalController , private loadingController: LoadingController) {
        //this.selectedItem = navParams.get('item');
       this.items=[
-        { title:'ภาวะปากแหว่งเพานโหว่',description:'',icon:'ios-arrow-dropright',num:0},
-        { title:'สาเหตุ',description:'',icon:'ios-arrow-dropright',num:1 },
-        { title:'โอกาสจะเกิดซ้ำ',description:'',icon:'ios-arrow-dropright',num:2},
-        { title:'ปัญหาที่พบและการแก้ไข',description:'',icon:'ios-arrow-dropright',num:3},
-        { title:'การดูแลรักษา ผ่าตัด และฟื้นฟูสภาพ',description:'',icon:'ios-arrow-dropright',num:4},
+        { title:'ภาวะปากแหว่งเพานโหว่',description:'',icon:'md-contacts',num:0},
+        { title:'สาเหตุ',description:'',icon:'ios-git-compare-outline',num:1 },
+        { title:'โอกาสจะเกิดซ้ำ',description:'',icon:'ios-git-network-outline',num:2},
+        { title:'ปัญหาที่พบและการแก้ไข',description:'',icon:'ios-image',num:3},
+        { title:'การดูแลรักษา ผ่าตัด และฟื้นฟูสภาพ',description:'',icon:'ios-medal-outline',num:4},
       ];
 
   }
@@ -36,35 +33,22 @@ export class HomePage {
      alert.present();
    }
 
-   presentModal(){
-     let modal=this.modalController.create(ModalController);
-     modal.present();
-   }
+
 
    openModal(characterNum) {
-
        let modal = this.modalController.create(ModalsContentPage, characterNum);
        modal.present();
      }
 
 
-     presentLoading() {
-        let loader = this.loadingController.create({
-          content: "Please wait...",
-          duration: 3000
-        });
-        loader.present();
-      }
-
-
-
-
 }
 
+//-------------  content modal
 
 @Component({
-  //templateUrl: './build/pages/modals/basic/modal-content.html'
-    templateUrl: 'build/pages/modals/modals.html'
+
+  templateUrl: 'build/pages/modals/modals.html'
+  //  template:'<ion-nav [root]="rootPage"></ion-nav>'
 })
 class ModalsContentPage {
   character;
@@ -73,11 +57,26 @@ class ModalsContentPage {
       public platform: Platform,
       public params: NavParams,
       public viewCtrl: ViewController
-  ) {
+  )
+  {
+
+  var  content1=[
+    {
+      name:'test1',
+
+    }
+
+
+  ]
+
     var characters = [
       {
-        name: 'Gollum',
-        quote: 'Sneaky little hobbitses!',
+        name: 'ภาวะปากแหว่งเพดานโหว่',
+        quote: 'ภาวะปากแหว่ง-เพดานโหว่ เป็นความผิดปกติของใบหน้าบริเวณปากและเพดานที่พบในเด็กแรกเกิด '
+                + '"มีลักษณะปรากฏได้หลายอย่าง ได้แก่ "'
+                +  '  ชนิดปากแหว่งอย่างเดียว   '
+                ,
+      //  discripttion:'',
         image: 'image/avatar-frodo.jpg',
         items: [
           { title: 'Race', note: 'Hobbit' },
@@ -85,6 +84,7 @@ class ModalsContentPage {
           { title: 'Alter Ego', note: 'Smeagol' }
         ]
       },
+      /*
       {
         name: 'Frodo',
         quote: 'Go back, Sam! I\'m going to Mordor alone!',
@@ -125,6 +125,8 @@ class ModalsContentPage {
           { title: 'Nickname', note: 'Sam' }
         ]
       }
+      */
+
     ];
     this.character = characters[this.params.get('charNum')];
   }
