@@ -1,26 +1,41 @@
 import {Component} from '@angular/core';
+
 import {NavController, NavParams  } from 'ionic-angular';
 import { ModalController , ViewController , Platform } from 'ionic-angular';
 import { AlertController , LoadingController }  from 'ionic-angular';
+
+
+
+//  templateUrl: 'build/pages/modals/modals.html'
+
+
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
 
 })
-export class HomePage {
+
+
+
+ class HomePage {
   // selectedItem: any;
    public items:any;
- public viewCtrl: ViewController
+   public viewCtrl: ViewController
 
   constructor(private nav: NavController,private alertController:AlertController,public modalController:ModalController , private loadingController: LoadingController) {
        //this.selectedItem = navParams.get('item');
       this.items=[
-        { title:'ภาวะปากแหว่งเพานโหว่',description:'',icon:'md-contacts',num:0},
-        { title:'สาเหตุ',description:'',icon:'ios-git-compare-outline',num:1 },
-        { title:'โอกาสจะเกิดซ้ำ',description:'',icon:'ios-git-network-outline',num:2},
-        { title:'ปัญหาที่พบและการแก้ไข',description:'',icon:'ios-image',num:3},
+        { title:'ภาวะปากแหว่งเพานโหว่',description:'',icon:'md-contacts',num:0,page:'http://www.google.com'},
+        { title:'สาเหตุ',description:'',icon:'ios-git-compare-outline',num:1 , },
+        { title:'โอกาสจะเกิดซ้ำ',description:'',icon:'ios-git-network-outline',num:2 , },
+        { title:'ปัญหาที่พบและการแก้ไข',description:'',icon:'ios-image',num:3 , },
         { title:'การดูแลรักษา ผ่าตัด และฟื้นฟูสภาพ',description:'',icon:'ios-medal-outline',num:4},
       ];
+
+
+
+
+
 
   }
 
@@ -36,12 +51,41 @@ export class HomePage {
 
 
    openModal(characterNum) {
-       let modal = this.modalController.create(ModalsContentPage, characterNum);
+      let modal = this.modalController.create(ModalsContentPage, characterNum);
        modal.present();
      }
 
 
+
+
+
+     openPage(characterNum) {
+       // close the menu when clicking a link from the menu
+      // this.menu.close();
+       // navigate to the new page if it is not the current page
+    //  let send =   this.NavController.create(characterNum.page);
+      //   send.present();
+
+      
+        //  return modal;
+
+     }
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
 
 //-------------  content modal
 
@@ -53,6 +97,8 @@ export class HomePage {
 class ModalsContentPage {
   character;
 
+
+
   constructor(
       public platform: Platform,
       public params: NavParams,
@@ -60,14 +106,6 @@ class ModalsContentPage {
   )
   {
 
-  var  content1=[
-    {
-      name:'test1',
-
-    }
-
-
-  ]
 
     var characters = [
       {
@@ -134,4 +172,8 @@ class ModalsContentPage {
   dismiss() {
     this.viewCtrl.dismiss();
   }
+
+
+
+
 }
